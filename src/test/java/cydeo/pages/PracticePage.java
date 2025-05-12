@@ -1,5 +1,6 @@
 package cydeo.pages;
 
+import cydeo.utilities.BrowserUtils;
 import cydeo.utilities.ConfigurationReader;
 import cydeo.utilities.Driver;
 import org.openqa.selenium.By;
@@ -45,7 +46,9 @@ public class PracticePage {
         String password=System.getenv("PASSWORD");
         System.out.println("password = " + password);
 
+        BrowserUtils.waitForVisibility(usernameEl,3);
         usernameEl.sendKeys(username);
+        BrowserUtils.waitForVisibility(passwordEl,3);
         passwordEl.sendKeys(password);
         loginButton.click();
 
