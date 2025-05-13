@@ -39,7 +39,7 @@ public class StepDefs {
 
     @Then("I should see page title as {string}")
     public void i_should_see_page_title_as(String expectedTitle) {
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(3);
         String actualTitle = Driver.getDriver().getTitle();
         System.out.println("actualTitle = " + actualTitle);
         Assert.assertEquals(expectedTitle,actualTitle);
